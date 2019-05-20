@@ -1,0 +1,11 @@
+81a1d117b49086da9cb4479de1ee79c7 *DESCRIPTION
+bde08eb6293bf73e3ac20ab2b9e042c2 *NAMESPACE
+9a7a362f78d6a40a5f0ddcf3d33a7947 *NEWS.md
+4640989779a9a2fc64faea03ba54e25e *R/lakegeneva.R
+2a6ee712313ce6893874770f67a20e6f *R/traits_to_mfg.R
+6fe8750339a4c6001b927897f0318395 *R/traits_to_mfg_df.r
+9ebe972f89fc94d77c290e497a8e2449 *README.md
+3cb6e634c7d22771f2dd064a8be6f5bf *data/lakegeneva.rda
+00c5216753857aa7c6f571eebea1bd69 *man/lakegeneva.Rd
+aec7e60f5807625ad6217f77a7e8eb2a *man/traits_to_mfg.Rd
+c2f1b1833a4cdaa558e7926485b3fcc5 *man/traits_to_mfg_df.Rd
