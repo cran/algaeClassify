@@ -1,8 +1,8 @@
-# algaeClassify 0.1.0
+# algaeClassify 1.2.0
 
-##News
+## Major changes
 
-*	This version contains two functions: traits_to_mfg() and traits_to_mfg_df(). These functions
-	allow for conversion between functional traits and morpho-functional groups (MFG). Future
-	versions will include functions for MFG assignment to species lists, and interconversion 
-	between MFG and the CSR classification system.
+- package now includes ability to classify species to csr or mfg using traits
+- algaebase database search functionality now available (algae_search and spp_list_algaebase)
+- data aggregation functions phyto_ts_aggregate and date_mat
+- species richness timeseries diagnostic plots (accum, sampeff)

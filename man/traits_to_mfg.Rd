@@ -2,7 +2,7 @@
 % Please edit documentation in R/traits_to_mfg.R
 \name{traits_to_mfg}
 \alias{traits_to_mfg}
-\title{Assign a morphofunctional group based on binary functional traits and higher taxonomy}
+\title{Assign MFG based on binary functional traits and taxonomy (Class and Order)}
 \usage{
 traits_to_mfg(flagella = NA, size = NA, colonial = NA,
   filament = NA, centric = NA, gelatinous = NA, aerotopes = NA,
@@ -31,13 +31,9 @@ traits_to_mfg(flagella = NA, size = NA, colonial = NA,
 A character string of the species' morphofunctional group
 }
 \description{
-Assign a morphofunctional group based on binary functional traits and higher taxonomy
+Assign MFG based on binary functional traits and taxonomy (Class and Order)
 }
 \examples{
-traits_to_mfg(1,"large",1,0,NA,0,0,"Euglenophyceae","Euglenales")
-
-}
-\seealso{
-\url{http://www.algaebase.org} for up-to-date phytoplankton taxonomy,
-    \url{https://powellcenter.usgs.gov/geisha} for project information
+traits_to_mfg(flagella = 1,size = "large",colonial = 1,filament = 0,centric = NA,gelatinous = 0,
+               aerotopes = 0,class = "Euglenophyceae",order = "Euglenales")
 }

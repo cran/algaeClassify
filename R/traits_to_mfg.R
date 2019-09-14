@@ -1,4 +1,4 @@
-#' Assign a morphofunctional group based on binary functional traits and higher taxonomy
+#' Assign MFG based on binary functional traits and taxonomy (Class and Order)
 #'
 #' @param flagella 1 if flagella are present, 0 if they are absent.
 #' @param size Character string: 'large' or 'small'. Classification criteria is left to the user.
@@ -11,14 +11,13 @@
 #' @param order Character string: The taxonomic order of the species
 #'
 #' @export traits_to_mfg
-#' 
+#'
 #' @return A character string of the species' morphofunctional group
-#' 
+#'
 #' @examples
-#' traits_to_mfg(1,"large",1,0,NA,0,0,"Euglenophyceae","Euglenales")
-#' 
-#' @seealso \url{http://www.algaebase.org} for up-to-date phytoplankton taxonomy,
-#'     \url{https://powellcenter.usgs.gov/geisha} for project information
+#' traits_to_mfg(flagella = 1,size = "large",colonial = 1,filament = 0,centric = NA,gelatinous = 0,
+#'                aerotopes = 0,class = "Euglenophyceae",order = "Euglenales")
+
 
 traits_to_mfg <- function(flagella = NA,
                          size = NA,
@@ -37,7 +36,7 @@ traits_to_mfg <- function(flagella = NA,
 					"Mediophyceae",
 					"Fragilariophyceae")==F) {
     #making sure that diatoms are excluded from this branch
-    if (order %in% c("Volvocales", 
+    if (order %in% c("Volvocales",
 					  "Chlamydomonadales")){
       if (colonial %in% 1) {
         mfg = "3b-ColoPhyto"

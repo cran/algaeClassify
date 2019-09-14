@@ -8,14 +8,19 @@
 #'
 #' @examples
 #' #create a two-row example dataframe of functional traits
-#' func.dframe=data.frame(flag=1,size=c("large","small"),col=0,fil=0,cent=NA,gel=0,
-#'                        aer=0,cl="Euglenophyceae",or="Euglenales",stringsAsFactors=FALSE)
-#'                        
-#' #check the dataframe                       
-#' print(func.dframe)                        
+#' func.dframe=data.frame(flagella=1,size=c("large","small"),colonial=0,filament=0,centric=NA,
+#'                        gelatinous=0,aerotopes=0,class="Euglenophyceae",order="Euglenales",
+#'                        stringsAsFactors=FALSE)
+#'
+#' #check the dataframe
+#' print(func.dframe)
 #'
 #' #run the function to produce a two-element character vector
-#' traits_to_mfg_df(func.dframe,c("flag","size","col","fil","cent","gel","aer","cl","or"))
+#' func.dframe$MFG<-traits_to_mfg_df(func.dframe,c("flagella","size","colonial",
+#'                                  "filament","centric","gelatinous",
+#'                                  "aerotopes","class","order"))
+#'
+#' print(func.dframe)
 traits_to_mfg_df<-function(dframe,arg.names=c("flagella",
                                               "size",
                                               "colonial",
@@ -25,7 +30,7 @@ traits_to_mfg_df<-function(dframe,arg.names=c("flagella",
                                               "aerotopes",
                                               "class",
                                               "order"))
-{ 
+{
   #dframe is a data frame of functional traits
   #arg.names is a vector of column names that match the arguments for traits_to_mfg()
   mfg.from.traits=""
@@ -41,6 +46,6 @@ traits_to_mfg_df<-function(dframe,arg.names=c("flagella",
                                      dframe[[arg.names[8]]][i],
                                      dframe[[arg.names[9]]][i])
   }
-  
+
   return(mfg.from.traits)
 }

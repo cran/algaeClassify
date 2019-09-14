@@ -1,31 +1,60 @@
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-algaeClassify
-=============
+# algaeClassify
 
-The goal of this package is to facilitate the assignment of morpho-functional group (MFG) classifications to phytoplankton species. MFG classifications are based on a combination of taxonomy (Class,Order) and a suite of 7 binomial functional traits. Classifications are derived from Salmaso, Nico, Luigi Naselli-Flores, and Judit Padisak. "Functional classifications and their application in phytoplankton ecology." Freshwater Biology 60.4 (2015): 603-619, and this reference should be cited when using the package. The algaeClassify package is a product of the GEISHA (Global Evaluation of the Impacts of Storms on freshwater Habitat and Structure of phytoplankton Assemblages), funded by CESAB (the Centre for Synthesis and Analysis of Biodiversity) and the USGS John Wesley Powell Center, with data and other support provided by members of GLEON (the Global Lake Ecology Observation Network). This software is preliminary or provisional and is subject to revision. It is being provided to meet the need for timely best science. The software has not received final approval by the U.S. Geological Survey (USGS). No warranty, expressed or implied, is made by the USGS or the U.S. Government as to the functionality of the software and related material nor shall the fact of release constitute any such warranty. The software is provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the software.
+<!-- badges: start -->
+<!-- badges: end -->
 
-Example
--------
+The goal of algaeClassify is to facilitate the analysis of taxonomic and functional trait
+data for phytoplankton.
 
-The two functions in this package allow you to assign MFg classifications to 1) a single taxon or 2) a dataframe of phytoplankton species.
+## Installation
+
+You can install the released version of algaeClassify from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("algaeClassify")
+```
+
+The development version can be installed from github with:
+``` r
+library(devtools)
+install_github("vppatil/GEISHA_phytoplankton/package builds/algaeClassify",ref="working")
+```
+
+## Example
+
+This is a basic example which shows you how to use algaeClassify to 
+1) identify anomalies in a time-series of phytoplankton species
+2) verify/correct species names using algaebase
+3) calculate aggregate abundance at a higher taxonomic level (genus)
+4) re-plot species accumulation curves to see if the taxonomic standardization and 
+aggregation to higher taxonomy have resolved the anomalies.
 
 ``` r
 library(algaeClassify)
-## using traits_to_mfg to assign MFg to a single species:
-traits_to_mfg(1,"large",1,0,NA,0,0,"Euglenophyceae","Euglenales")
-#> [1] "1c-LargeEugl"
 
-## using traits_to_mfg_df
-#first, create a two-row example dataframe of functional traits
-func.dframe=data.frame(flag=1,size=c("large","small"),col=0,fil=0,cent=NA,gel=0,
-                        aer=0,cl="Euglenophyceae",or="Euglenales",stringsAsFactors=FALSE)
-#check the dataframe                       
-func.dframe                       
-#>   flag  size col fil cent gel aer             cl         or
-#> 1    1 large   0   0   NA   0   0 Euglenophyceae Euglenales
-#> 2    1 small   0   0   NA   0   0 Euglenophyceae Euglenales
+data(lakegeneva) #load a demonstration dataset
 
-#run the function to produce a two-element character vector
-traits_to_mfg_df(func.dframe,c("flag","size","col","fil","cent","gel","aer","cl","or"))
-#> [1] "1c-LargeEugl" "2c-SmallEugl"
+#view species accumulation curve over duration of dataset to check for anomalies
+accum(lakegeneva,phyto_name='genus',column='biovol_um3_ml',n=100,datename='date_dd_mm_yy',dateformat='%d-%m-%y')
+
+#clean up binomial names and extract genus and species to new columns
+lakegeneva<-genus_species_extract(lakegeneva,phyto.name='phyto_name')
+
+#compare names against accepted taxonomy in algaebase, and extract higher taxonomy
+lakegeneva.algaebase<-spp_list_algaebase(lakegeneva,long=TRUE,write=FALSE)
+
+#merge taxonomic information into the original database
+lakegeneva<-merge(lakegeneva,lakegeneva.algaebase)
+
+#aggregate abundance data to genus level
+lakegeneva.genus<-phyto_ts_aggregate(lakegeneva,SummaryType='abundance',AbundanceVar='biovol_um3_ml',
+                    GroupingVar1='genus')
+
+#plot accumulation curve again, but at genus level
+accum(lakegeneva.genus,phyto_name='genus',column='biovol_um3_ml',n=100,datename='date_dd_mm_yy',dateformat='%Y-%m-%d')
+
+
+
+
 ```
+
