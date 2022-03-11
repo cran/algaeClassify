@@ -4,9 +4,17 @@
 \alias{traits_to_mfg}
 \title{Assign MFG based on binary functional traits and taxonomy (Class and Order)}
 \usage{
-traits_to_mfg(flagella = NA, size = NA, colonial = NA,
-  filament = NA, centric = NA, gelatinous = NA, aerotopes = NA,
-  class = NA, order = NA)
+traits_to_mfg(
+  flagella = NA,
+  size = NA,
+  colonial = NA,
+  filament = NA,
+  centric = NA,
+  gelatinous = NA,
+  aerotopes = NA,
+  class = NA,
+  order = NA
+)
 }
 \arguments{
 \item{flagella}{1 if flagella are present, 0 if they are absent.}

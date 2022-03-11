@@ -4,10 +4,16 @@
 \alias{date_mat}
 \title{Transform a phytoplankton timeseries into a matrix of abundances for ordination}
 \usage{
-date_mat(phyto.df, abundance.var = "biovol_um3_ml",
-  summary.type = "abundance", taxa.name = "phyto_name",
-  date.name = "date_dd_mm_yy", format = "\%d-\%m-\%y",
-  time.agg = c("day", "month", "year", "monthyear"), fun = mean_naomit)
+date_mat(
+  phyto.df,
+  abundance.var = "biovol_um3_ml",
+  summary.type = "abundance",
+  taxa.name = "phyto_name",
+  date.name = "date_dd_mm_yy",
+  format = "\%d-\%m-\%y",
+  time.agg = c("day", "month", "year", "monthyear"),
+  fun = mean_naomit
+)
 }
 \arguments{
 \item{phyto.df}{Name of data.frame object}

@@ -4,8 +4,14 @@
 \alias{sampeff}
 \title{Visually assess change in sampling effort over time (author: Dietmar Straile)}
 \usage{
-sampeff(b_data, column, save.pdf = F, lakename = "",
-  datecolumn = "date_dd_mm_yy", dateformat = "\%d-\%m-\%y")
+sampeff(
+  b_data,
+  column,
+  save.pdf = F,
+  lakename = "",
+  datecolumn = "date_dd_mm_yy",
+  dateformat = "\%d-\%m-\%y"
+)
 }
 \arguments{
 \item{b_data}{Name of data.frame object}

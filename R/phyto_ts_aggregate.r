@@ -77,7 +77,7 @@ phyto_ts_aggregate=function(phyto.data,DateVar='date_dd_mm_yy',
 
   agg.func=stats::formula(paste(AbundanceVar,"~ date_dd_mm_yy + ",groupingvars))
 
-  ts.agg=stats::aggregate(formula=agg.func,data=phyto.data,FUN=fun)
+  ts.agg=stats::aggregate(agg.func,data=phyto.data,FUN=fun)
 
   return(ts.agg)
 

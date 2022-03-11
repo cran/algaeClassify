@@ -7,9 +7,16 @@ Plots change in species richness over time, generates species accumulation curve
 compares SAC against simulated idealized curve assuming all unique taxa have equal probability
 of being sampled at any point in the time series. (author Dietmar Straile)}
 \usage{
-accum(b_data, phyto_name = "phyto_name", column = NA, n = 100,
-  save.pdf = FALSE, lakename = "", datename = "date_dd_mm_yy",
-  dateformat = "\%d-\%m-\%y")
+accum(
+  b_data,
+  phyto_name = "phyto_name",
+  column = NA,
+  n = 100,
+  save.pdf = FALSE,
+  lakename = "",
+  datename = "date_dd_mm_yy",
+  dateformat = "\%d-\%m-\%y"
+)
 }
 \arguments{
 \item{b_data}{Name of data.frame object}

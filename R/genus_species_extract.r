@@ -84,8 +84,8 @@ genus_species_extract<-function(phyto.df,phyto.name)
   genus=trimws(genus,'both')
   species=trimws(species,'both')
 
-  phyto.df$genus=genus
-  phyto.df$species=species
+  phyto.df$genus=c(genus)
+  phyto.df$species=c(species)
 
   return(phyto.df)
 }

@@ -5,8 +5,7 @@
 \title{Assign phytoplankton species to CSR functional groups, based on surface to volume ratio and
 maximum linear dimension ranges proposed by Reynolds et al. 1988;2006}
 \usage{
-traits_to_csr(sav, msv, msv.source = "Reynolds 2006",
-  traitrange = traitranges)
+traits_to_csr(sav, msv, msv.source = "Reynolds 2006", traitrange = traitranges)
 }
 \arguments{
 \item{sav}{numeric estimate of cell or colony surface area /volume ratio}

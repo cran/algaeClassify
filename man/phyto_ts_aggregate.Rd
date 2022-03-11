@@ -6,11 +6,18 @@
 e.g. genus, species, stationid, depth range.
 If no abundance var is given, will aggregate to presence/absence of grouping vars.}
 \usage{
-phyto_ts_aggregate(phyto.data, DateVar = "date_dd_mm_yy",
+phyto_ts_aggregate(
+  phyto.data,
+  DateVar = "date_dd_mm_yy",
   SummaryType = c("abundance", "presence.absence"),
-  AbundanceVar = "biovol_um3_ml", GroupingVar1 = "phyto_name",
-  GroupingVar2 = NA, GroupingVar3 = NA, remove.rare = FALSE,
-  fun = sum, format = "\%d-\%m-\%y")
+  AbundanceVar = "biovol_um3_ml",
+  GroupingVar1 = "phyto_name",
+  GroupingVar2 = NA,
+  GroupingVar3 = NA,
+  remove.rare = FALSE,
+  fun = sum,
+  format = "\%d-\%m-\%y"
+)
 }
 \arguments{
 \item{phyto.data}{data.frame}

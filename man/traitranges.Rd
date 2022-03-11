@@ -5,7 +5,8 @@
 \alias{traitranges}
 \title{surface/volume ratio and max linear dimension criteria for CSR
 From Reynolds 1988 and Reynolds 2006}
-\format{A data frame with columns:
+\format{
+A data frame with columns:
 \describe{
  \item{Measurement}{measurement type}
  \item{C.min}{minimum value for C}
@@ -16,7 +17,8 @@ From Reynolds 1988 and Reynolds 2006}
  \item{R.max}{maximum value for R}
  \item{units}{units of measurement}
  \item{source}{source for criteria}
-}}
+}
+}
 \usage{
 data(traitranges)
 }

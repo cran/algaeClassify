@@ -4,8 +4,11 @@
 \alias{traits_to_mfg_df}
 \title{Assign morphofunctional groups to a dataframe of functional traits and higher taxonomy}
 \usage{
-traits_to_mfg_df(dframe, arg.names = c("flagella", "size", "colonial",
-  "filament", "centric", "gelatinous", "aerotopes", "class", "order"))
+traits_to_mfg_df(
+  dframe,
+  arg.names = c("flagella", "size", "colonial", "filament", "centric", "gelatinous",
+    "aerotopes", "class", "order")
+)
 }
 \arguments{
 \item{dframe}{An R dataframe containing functional trait information and higher taxonomy}

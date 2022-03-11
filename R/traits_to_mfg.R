@@ -87,14 +87,14 @@ traits_to_mfg <- function(flagella = NA,
   else {
     if (class %in% c("Cyanophyceae",
 					 "Cyanobacteria")){
+          if (order %in% "Nostocales"){
+            mfg = "5e-Nostocales"
+          }
+		else
       if (colonial %in% 1){
         if (order %in% "Oscillatoriales"){
           mfg = "5a-FilaCyano"
         }
-        else
-          if (order %in% "Nostocales"){
-            mfg = "5e-Nostocales"
-          }
         else
           if (size %in% "large") {
             if (aerotopes %in% 1){
@@ -195,7 +195,7 @@ traits_to_mfg <- function(flagella = NA,
       mfg = "9a-SmallConj"
     }
   else
-    if (order %in% "Chlorococcales") {
+    if (order %in% c("Chlorococcales","Sphaeropleales")) {
       mfg = "9b-SmallChlor"
     }
   else
@@ -204,7 +204,9 @@ traits_to_mfg <- function(flagella = NA,
 					 "Phaeothamniophyceae")) {
       mfg = "9c-SmallChry2"
     }
-  else {
+  else 
+  if(!is.na(class) & !is.na(order))
+  {
     mfg = "9d-SmallUnic"
   }
   }
