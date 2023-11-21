@@ -21,7 +21,7 @@
 #'
 #'print(csr.df)
 
-traits_to_csr_df=function(df,sav,msv,msv.source='Reynolds 2006',traitrange=traitranges)
+traits_to_csr_df=function(df,sav,msv,msv.source='Reynolds 2006',traitrange=algaeClassify::traitranges)
 {
   csr=vector(mode='character',length=dim(df)[1])
 

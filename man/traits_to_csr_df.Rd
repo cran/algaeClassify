@@ -10,7 +10,7 @@ traits_to_csr_df(
   sav,
   msv,
   msv.source = "Reynolds 2006",
-  traitrange = traitranges
+  traitrange = algaeClassify::traitranges
 )
 }
 \arguments{

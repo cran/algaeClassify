@@ -1,8 +1,8 @@
 Package: algaeClassify
 Title: Determine Phytoplankton Functional Groups Based on Functional
         Traits
-Version: 1.3.2
-Date: 2022-03-11
+Version: 2.0.1
+Date: 2023-11-21
 Authors@R: c(person("Vijay","Patil",email="vpatil@usgs.gov",role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),
@@ -22,29 +22,36 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	<doi:10.1111/fwb.12520>) and CSR (Reynolds 1988; Functional morphology and the 
 	adaptive strategies of phytoplankton. In C.D. Sandgren (ed). Growth and reproductive 
 	strategies of freshwater phytoplankton, 388-433. Cambridge University Press, New York). 
-	Versions 1.3.0 and later no longer include the algae_search() function for querying the 
-	algaebase online taxonomic database (www.algaebase.org). Users are advised to verify 
-	taxonomic names directly using algaebase and cite the database in resulting publications.
-	Note that none of the algaeClassify authors are affiliated with algaebase in any way.
+	Versions 2.0.0 and later includes new functions for querying the 
+	algaebase online taxonomic database (www.algaebase.org), however these functions require
+	a valid API key that must be acquired from the algaebase admin. 
+	Note that none of the algaeClassify authors are affiliated with algaebase in any way. Taxonomic 
+	names can also be checked against a variety of taxonomic databases using 
+	the geographic name resolution service (GNRS) via wrapper functions for the taxize package, 
+	with convenient output format and unlikely names for phytoplankton taxa removed. In addition,
+	currently accepted and outdated synonyms, and higher taxonomy, can be extracted for lists of 
+	species from the ITIS database using wrapper functions for the ritis package.
 	The algaeClassify package is a product of the GEISHA (Global Evaluation of the Impacts of 
 	Storms on freshwater Habitat and Structure of phytoplankton Assemblages), funded by CESAB 
     (Centre for Synthesis and Analysis of Biodiversity) and the USGS John Wesley Powell Center for
 	Synthesis and Analysis, with data and other support provided by members of GLEON 
-	(Global Lake Ecology Observation Network). This software is preliminary or provisional and
-	is subject to revision. It is being provided to meet the need for timely best science. 
-	The software has not received final approval by the U.S. Geological Survey (USGS). 
-	No warranty, expressed or implied, is made by the USGS or the U.S. Government as to the 
+	(Global Lake Ecology Observation Network). 
+	DISCLAIMER: This software has been approved for release by the 
+	U.S. Geological Survey (USGS). Although the software has been subjected to rigorous review, 
+	the USGS reserves the right to update the software as needed pursuant to further analysis and 
+	review. No warranty, expressed or implied, is made by the USGS or the U.S. Government as to the 
 	functionality of the software and related material nor shall the fact of release constitute 
-	any such warranty. The software is provided on the condition that neither the USGS nor the U.S. 
-	Government shall be held liable for any damages resulting from the authorized or unauthorized 
-	use of the software.
-Depends: R (>= 3.4.0)
-Imports: lubridate, stats
-License: GPL-2 | GPL-3
+	any such warranty. Furthermore, the software is released on condition that neither the USGS 
+	nor the U.S. Government shall be held liable for any damages resulting from its authorized 
+	or unauthorized use.
+Depends: R (>= 4.3.0)
+URL: https://doi.org/10.5066/F7S46Q3F
+Imports: lubridate, stats, taxize, ritis, curl, jsonlite, methods
+License: CC0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2022-03-11 20:56:37 UTC; vpatil
+Packaged: 2023-11-21 19:44:08 UTC; vpatil
 Repository: CRAN
-Date/Publication: 2022-03-11 23:30:08 UTC
+Date/Publication: 2023-11-21 22:40:05 UTC

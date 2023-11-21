@@ -87,7 +87,7 @@ traits_to_mfg <- function(flagella = NA,
   else {
     if (class %in% c("Cyanophyceae",
 					 "Cyanobacteria")){
-          if (order %in% "Nostocales"){
+          if (order %in% c("Nostocales","Hormogonales")){
             mfg = "5e-Nostocales"
           }
 		else
@@ -204,7 +204,7 @@ traits_to_mfg <- function(flagella = NA,
 					 "Phaeothamniophyceae")) {
       mfg = "9c-SmallChry2"
     }
-  else 
+  else
   if(!is.na(class) & !is.na(order))
   {
     mfg = "9d-SmallUnic"
