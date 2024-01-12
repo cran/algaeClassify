@@ -28,5 +28,5 @@ outputs matches, current accepted names, synonyms, and higher taxonomy
 }
 \examples{
 species="Aphanizomenon flosaquae"
-species_search_itis(species,higher=TRUE)
+species_search_itis(species,higher=FALSE)
 }

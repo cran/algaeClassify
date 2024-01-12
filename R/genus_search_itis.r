@@ -11,10 +11,28 @@
 #'
 #' @examples
 #' genus='Anabaena'
-#' genus_search_itis(genus,higher=TRUE)
+#' genus_search_itis(genus,higher=FALSE)
 
 genus_search_itis<-function(genus,higher=FALSE)
 {
+  ##added error trapping to handle ITIS site crashes. 12/18/2023
+  itis.test<-RCurl::url.exists("www.itis.gov")
+  if(!itis.test){
+    message("Warning: Could not connect to ITIS website (www.itis.gov). The site may be
+            temporarily down. Please try again later.")
+    res.df=data.frame(matched.name=NA,match=0,
+                      orig.name.accepted=0,
+                      orig.name=genus,genus.only=1,synonyms="")
+    if(higher==TRUE)
+      if(higher){
+        higher.df<-data.frame(Kingdom=NA,Subkingdom=NA,Infrakingdom=NA,
+                              Phylum=NA,Class=NA,Subclass=NA,Order=NA,
+                              Family=NA)
+        res.df<-cbind(res.df,higher.df)
+      }
+    return(res.df)
+  }
+
 	suppressWarnings(rm(list="res.df"))
 	  if(is.na(genus))
 	  {
@@ -37,8 +55,8 @@ genus_search_itis<-function(genus,higher=FALSE)
 
 	accepted=0
 	search.q=paste0("rank:Genus AND nameWOInd:",genus)
-	s<-ritis::itis_search(q=search.q)
-	s<-s[s[["kingdom"]]!='Animalia',]
+	s<-tryCatch(suppressWarnings(ritis::itis_search(q=search.q)))
+	ss<-s[s[["kingdom"]]!='Animalia',]
 
 	sci.names<-genus_species_extract(s,"nameWOInd")
 	genus.names=sci.names[sci.names$species=='' &

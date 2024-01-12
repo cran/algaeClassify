@@ -1,8 +1,8 @@
 Package: algaeClassify
-Title: Determine Phytoplankton Functional Groups Based on Functional
-        Traits
-Version: 2.0.1
-Date: 2023-11-21
+Title: Tools to Standardize Phytoplankton Taxonomic Data and Perform
+        Functional Group Classifications
+Version: 2.0.2
+Date: 2024-01-11
 Authors@R: c(person("Vijay","Patil",email="vpatil@usgs.gov",role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),
@@ -46,12 +46,13 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	or unauthorized use.
 Depends: R (>= 4.3.0)
 URL: https://doi.org/10.5066/F7S46Q3F
-Imports: lubridate, stats, taxize, ritis, curl, jsonlite, methods
+Imports: lubridate, stats, taxize, ritis, curl, jsonlite, methods,
+        RCurl
 License: CC0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2023-11-21 19:44:08 UTC; vpatil
+Packaged: 2024-01-11 23:53:21 UTC; vpatil
 Repository: CRAN
-Date/Publication: 2023-11-21 22:40:05 UTC
+Date/Publication: 2024-01-12 00:10:02 UTC

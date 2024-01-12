@@ -21,5 +21,5 @@ Searches ITIS database for matches to a genus name
 }
 \examples{
 genus='Anabaena'
-genus_search_itis(genus,higher=TRUE)
+genus_search_itis(genus,higher=FALSE)
 }

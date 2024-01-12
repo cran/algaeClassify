@@ -2,7 +2,7 @@
 
 ## Title: Determine Phytoplankton Functional Groups Based on Functional Traits
 
--   release v2.0.1
+-   release v2.0.2
     -   a newer version of this software package may be available.
         -   provisional updates:
             <https://code.usgs.gov/asc/algaeClassify/-/tree/main>

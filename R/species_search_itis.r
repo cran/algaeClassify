@@ -17,7 +17,7 @@
 #'
 #' @examples
 #' species="Aphanizomenon flosaquae"
-#' species_search_itis(species,higher=TRUE)
+#' species_search_itis(species,higher=FALSE)
 species_search_itis<-function(genspp,higher=FALSE)
 {
   #depends on ritis
@@ -26,6 +26,25 @@ species_search_itis<-function(genspp,higher=FALSE)
   genspp<-gsub("-","",genspp,fixed=TRUE)
 
   suppressWarnings(rm(list="res.df"))
+
+  ##added error trapping to handle ITIS site crashes. 12/18/2023
+  itis.test<-RCurl::url.exists("http://www.itis.gov")
+  if(!itis.test){
+    message("Warning: Could not connect to ITIS website (www.itis.gov). The site may be
+            temporarily down. Please try again later.")
+    res.df=data.frame(matched.name=NA,match=0,
+                      orig.name.accepted=0,
+                      orig.name=genspp.orig,genus.only=0,synonyms="")
+    if(higher==TRUE)
+      if(higher){
+        higher.df<-data.frame(Kingdom=NA,Subkingdom=NA,Infrakingdom=NA,
+                              Phylum=NA,Class=NA,Subclass=NA,Order=NA,
+                              Family=NA)
+        res.df<-cbind(res.df,higher.df)
+
+      }
+    return(res.df)
+  }
 
   if(is.na(genspp))
   {

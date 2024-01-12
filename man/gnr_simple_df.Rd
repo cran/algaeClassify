@@ -18,14 +18,14 @@ gnr_simple_df(
 \arguments{
 \item{df}{data.frame containing names to check}
 
-\item{name.column}{integer or character string with column name containing 
+\item{name.column}{integer or character string with column name containing
 species names}
 
 \item{sourceid}{integer with data source id from taxize::gnr_datasources()}
 
 \item{topscore}{boolean. Should the best match be returned based on score?}
 
-\item{numhits}{boolean. Should the best match be returned based on 
+\item{numhits}{boolean. Should the best match be returned based on
 the number of sources with a match?}
 
 \item{canonical}{If TRUE, names do not include authorship or date}
@@ -37,22 +37,22 @@ the number of sources with a match?}
 \value{
 new data.frame original names (orig.name), 1/0 flag for an exact match,
 			the best match (matched.name), and other output from gnr_simple().
-			scores, and number of hits (matches) from different data sources in 
+			scores, and number of hits (matches) from different data sources in
 		gnr_resolve()
 }
 \description{
-Provides convienent output with a row per name. To streamline merging with 
+Provides convienent output with a row per name. To streamline merging with
 original data.
 }
 \examples{
 data(lakegeneva)
 #example dataset with 50 rows
 
-new.lakegeneva <- genus_species_extract(lakegeneva,'phyto_name')
+new.lakegeneva <- genus_species_extract(lakegeneva[1,],'phyto_name')
 new.lakegeneva$genus_species <- trimws(paste(new.lakegeneva$genus,
 new.lakegeneva$species))
 
 #checking for matches from all GNRS sources:
-lakegeneva.namematches <- gnr_simple_df(new.lakegeneva[1:10,],"genus_species")
+lakegeneva.namematches <- gnr_simple_df(new.lakegeneva,"genus_species")
 lakegeneva.namematches
 }
