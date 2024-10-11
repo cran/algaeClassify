@@ -1,4 +1,6 @@
-# algaeClassify 2.0.2
+# algaeClassify 2.0.4
+
+# algaeClassify 2.0.3
 
 ## Major changes
 
@@ -12,3 +14,5 @@ the ITIS taxonomic database.
 -Version 2.0.1 has been approved as an official U.S. Geological Survey software release.
 -Version 2.0.2 includes improved error handling for itis search functions, and will return
 a warning and data.frame containing NAs if the ITIS website is temporarily down.
+-Version 2.0.3 queries the Global Names Resolver via its API, rather than calling
+  functions from the taxize package.

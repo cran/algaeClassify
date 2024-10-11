@@ -2,46 +2,46 @@
 % Please edit documentation in R/gnr_simple.r
 \name{gnr_simple}
 \alias{gnr_simple}
-\title{Wrapper function for taxize::gnr_resolve()
-checks species names against a variety of online databases
-supports fuzzy partial matching}
+\title{checks species names against a variety of online databases
+supports fuzzy partial matching, using the Global Names Resolver
+(https://resolver.globalnames.org/)}
 \usage{
 gnr_simple(
   name,
   sourceid = NULL,
-  topscore = TRUE,
-  numhits = TRUE,
+  best_match = TRUE,
   canonical = TRUE,
   with_context = TRUE,
-  ...
+  higher = FALSE
 )
 }
 \arguments{
 \item{name}{character string binomial scientific name to resolve}
 
-\item{sourceid}{integer with data source id from taxize::gnr_datasources()}
+\item{sourceid}{integer vector with data source ids.
+see https://resolver.globalnames.org/sources/}
 
-\item{topscore}{boolean. Should the best match be returned based on score?}
-
-\item{numhits}{boolean. Should the best match be returned based on 
-the number of sources with a match?}
+\item{best_match}{boolean. Should the best match be returned based on score?}
 
 \item{canonical}{If TRUE, names do not include authorship or date}
 
-\item{with_context}{If TRUE, Match scores are weighted for taxonomic consistency}
+\item{with_context}{If TRUE, Match scores are weighted for taxonomic
+consistency}
 
-\item{...}{Other parameters passed to taxize::gnr_resolve()}
+\item{higher}{boolean: Return higher taxonomic classifications?}
 }
 \value{
-new data.frame with name matches, column indicating an exact match,
-scores, and number of hits (matches) from different data sources in gnr_resolve()
+new data.frame with name matches, column indicating match type
+and scores from Global Names Resolver (https://resolver.globalnames.org/).
+Will contain a row of NAs if no matches found
 }
 \description{
-Provides convienent output with a single result, using a variety 
+Provides convienent output with a single result, using a variety
 of criteria for the best match
 }
 \examples{
-#use taxize::gnr_datasources() to see all possible data sources for name checking.
+#Visit https://resolver.globalnames.org/data_sources to see all possible
+#data sources for name checking.
 name<-"Aphanazomenon flos-aquae"
 #sourceid=3 for ITIS database,195 for Algaebase
 gnr_simple(name,sourceid=3) #search for ITIS matches

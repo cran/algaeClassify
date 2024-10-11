@@ -16,11 +16,11 @@
 #' @keywords datasets
 #'
 #' @references {Algaebase} \url{https://www.algaebase.org}
-#' @references {Phycokey} \url{http://www.cfb.unh.edu/phycokey/phycokey.htm}
+#' @references {Phycokey} \url{https://www.cfb.unh.edu/phycokey/phycokey.htm}
 #' @references {Western Diatoms of North America} \url{https://diatoms.org}
 #' @references {CyanoDB 2} \url{http://www.cyanodb.cz/}
-#' @references {Nordic Microalgae} \url{http://nordicmicroalgae.org}
-#' @references {Phytopedia} \url{https://www.eoas.ubc.ca/research/phytoplankton/}
+#' @references {Nordic Microalgae} \url{https://nordicmicroalgae.org}
+#' @references {Phytopedia} \url{https://phytoplankton.eoas.ubc.ca/}
 #' @references {Kapustin, D., Sterlyagova, I. and Patova, E., 2019. Morphology of Chrysastrella paradoxa stomatocysts from the Subpolar Urals (Russia) with comments on related morphotypes. Phytotaxa, 402(6), pp.295-300.}
 
 "species_mfg_library"

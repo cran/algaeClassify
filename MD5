@@ -1,7 +1,7 @@
-98822b1275d878ccf059e662f4269650 *CHANGELOG
-3e1ba884e69fbcb55525937879714ded *DESCRIPTION
-747c3db9a8e1112dda5a14a4d9737292 *NAMESPACE
-9acbb2fb446948923b528c945f777fb8 *NEWS.md
+5d9e02c9a68042ad2c36faf24d4c577f *CHANGELOG
+52ea8117cff4cc0b48c789a88c4df06e *DESCRIPTION
+8565f4c522d9cedeaeaae4c966a82f79 *NAMESPACE
+d8f49125b38108ab4bafcfee4e98ecfa *NEWS.md
 e261de34bd3c421decd4ccbf8acc443d *R/accum.R
 7962412f627609ca7c583048865b4993 *R/algaebase_genus_search.r
 49b00050757339fec11c1aa7de3e77c1 *R/algaebase_output_parse.r
@@ -14,8 +14,8 @@ d020743d232a1f2b5972f39b8321e4ce *R/date_mat.R
 acfe683724bea4290ea42285a4098566 *R/genus_species_extract.r
 010edd98e406c5ca0605cf4dfd24df69 *R/get_apikey_from_Renviron.r
 ca097c65154ad9a73ea3500cac7731de *R/get_apikey_from_file.r
-465b3f4e5109b5d49a8e0b58af9de60e *R/gnr_simple.r
-d899fdb0f2f254c20507251400f1c631 *R/gnr_simple_df.r
+7cf981e7641f0a26dc0ed0759bc16ab8 *R/gnr_df.r
+59159b7758d24080087bd897f10d9784 *R/gnr_simple.r
 ca05f56f51b2da75a741be35e09a504b *R/itis_search_df.r
 4640989779a9a2fc64faea03ba54e25e *R/lakegeneva.R
 bdaa200899f7e27474ee2480d65a2f2f *R/mfgTraits.r
@@ -25,7 +25,7 @@ b0bb658648068755d5d6c78ae1dd38c6 *R/mfg_csr_library.r
 40853ba407d992af5ab75d73e566782e *R/phyto_ts_aggregate.r
 c8c0fd7eedd3a5d8e3a42c163a697338 *R/sampeff.r
 3f67e86910d27342c8cc06ac60df17c3 *R/set_algaebase_apikey_header.r
-2cb96f1ef85f885a8b210468f47a7fae *R/species_mfg_library.r
+68f02a46f7cb64818c185bd8e6d27fe8 *R/species_mfg_library.r
 fe800af703525b3a0a572c22c36ad125 *R/species_search_itis.r
 32b136e850b61ed53e4bf93c1e117a2d *R/species_to_mfg.r
 3afa77558f9868c7dd958dc4ecacc0d4 *R/species_to_mfg_df.r
@@ -34,7 +34,7 @@ ecf9ac858ab3b8120f056be14ab36f17 *R/traits_to_csr.r
 4d95bad5760159e84d8fdfe966332f92 *R/traits_to_csr_df.r
 faacae4116d98822e84b68fb28b8deae *R/traits_to_mfg.R
 36adb8189feae5433694e4b5c1b14abf *R/traits_to_mfg_df.r
-630a7f053c7d54524771058aaa10d1e4 *README.md
+94a5e7cb66c2bf427d392a73e5b60cc4 *README.md
 d4d6da60286baf7c46223f46787c03e6 *data/csrTraits.rda
 9968285d4825a0215e0270336b47198b *data/lakegeneva.rda
 2ed67cf1b8e301a5564b8c32e6ed3bf8 *data/mfgTraits.rda
@@ -53,8 +53,8 @@ aa19d6debf8f9f89055bcb8cf55842b1 *man/csrTraits.Rd
 3223299d28bc6b593817bce50665cb6b *man/genus_species_extract.Rd
 5fd33bc6256579d23c661795d56cdd01 *man/get_apikey.Rd
 75d3234ce8a7c297c669e5f7f9f1b7c5 *man/get_apikey_fromfile.Rd
-1a07bad96e91c331b9e3df5aa437ea13 *man/gnr_simple.Rd
-3b2c8fc1b36644cfcbdadff9ba2de1c0 *man/gnr_simple_df.Rd
+bb1a6d3e020ff604f5a082342a706698 *man/gnr_df.Rd
+0c03689da8227f3737dd6acea662f700 *man/gnr_simple.Rd
 ee2aa05b0b020dddcc577a752bd077bb *man/itis_search_df.Rd
 053bb533bcad46c33be4d50a40179503 *man/lakegeneva.Rd
 a121de6e159f580e1cc0af0b936575a0 *man/mean_naomit.Rd
@@ -65,7 +65,7 @@ ffe8f224e86a3034a59e808587ae61f0 *man/mfg_csr_library.Rd
 ba88f370dfda8a34ca1596c376bb032c *man/phyto_ts_aggregate.Rd
 bd2494cabfa1756878882f1cde44c6b5 *man/sampeff.Rd
 cddf7cd9fb9d0f50e73d26f7a3df79ab *man/set_algaebase_apikey_header.Rd
-38a2baf37389b9a28cb559e28239f9d1 *man/species_mfg_library.Rd
+ed9fb4f4885897399516e144f86a0a97 *man/species_mfg_library.Rd
 db6f77307501e8e60f40a5b0cd54d038 *man/species_search_itis.Rd
 977d756161282ea89f226cb2291b9e2f *man/species_to_mfg.Rd
 d8576495cbf91cd14fcf5783a62d5c7b *man/species_to_mfg_df.Rd

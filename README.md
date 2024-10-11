@@ -2,12 +2,8 @@
 
 ## Title: Determine Phytoplankton Functional Groups Based on Functional Traits
 
--   release v2.0.2
+-   release v2.0.3
     -   a newer version of this software package may be available.
-        -   provisional updates:
-            <https://code.usgs.gov/asc/algaeClassify/-/tree/main>
-        -   approved releases:
-            <https://code.usgs.gov/asc/algaeClassify/-/releases>
 
 ## Authors
 
@@ -55,11 +51,14 @@ Functions that facilitate the use of accepted taxonomic nomenclature,
 collection of functional trait data, and assignment of functional group
 classifications to phytoplankton species. Possible classifications
 include Morpho-functional group (MFG; [Salmaso et al. 2015]
-<https://doi.org/10.1111/fwb.12520> ) and CSR, based on [Reynolds 1988] (Functional morphology
-and the adaptive strategies of phytoplankton. In C.D. Sandgren (ed).
-Growth and reproductive strategies of freshwater phytoplankton, 388-433.
-Cambridge University Press, New York) and [Reynolds 2006]
-<https://doi.org/10.1017/CBO9780511542145>.
+Salmaso, N., Naselli-Flores, L. and Padisak, J., 2015. Functional 
+classifications and their application in phytoplankton ecology. 
+Freshwater Biology, 60(4), pp.603-619.) and CSR, based on 
+[Reynolds 1988] (Functional morphology and the adaptive strategies 
+ of phytoplankton. In C.D. Sandgren (ed). Growth and reproductive 
+ strategies of freshwater phytoplankton, 388-433. Cambridge University 
+ Press, New York) and [Reynolds 2006] 
+ <https://doi.org/10.1017/CBO9780511542145>.
 
 Versions 2.0.0 and later includes new functions for querying the
 algaebase online taxonomic database (www.algaebase.org), however these

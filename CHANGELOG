@@ -6,3 +6,8 @@
 - v2.0.2
 	- 2023-12-18
 	- Improved error handling for ITIS search functions
+	
+- v2.0.3
+	- 2024-10-08
+	- Removed taxize dependency. Revised gnr_simple and gnr_df to use the Global Names Resolver API
+	

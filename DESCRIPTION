@@ -1,8 +1,9 @@
 Package: algaeClassify
-Title: Tools to Standardize Phytoplankton Taxonomic Data and Perform
-        Functional Group Classifications
-Version: 2.0.2
-Date: 2024-01-11
+Title: Tools to Query the Algaebase Online Database, Standardize
+        Phytoplankton Taxonomic Data, and Perform Functional Group
+        Classifications
+Version: 2.0.3
+Date: 2024-10-08
 Authors@R: c(person("Vijay","Patil",email="vpatil@usgs.gov",role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),
@@ -27,8 +28,7 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	a valid API key that must be acquired from the algaebase admin. 
 	Note that none of the algaeClassify authors are affiliated with algaebase in any way. Taxonomic 
 	names can also be checked against a variety of taxonomic databases using 
-	the geographic name resolution service (GNRS) via wrapper functions for the taxize package, 
-	with convenient output format and unlikely names for phytoplankton taxa removed. In addition,
+	the Global Names Resolver service via its API (<https://resolver.globalnames.org/api>). In addition,
 	currently accepted and outdated synonyms, and higher taxonomy, can be extracted for lists of 
 	species from the ITIS database using wrapper functions for the ritis package.
 	The algaeClassify package is a product of the GEISHA (Global Evaluation of the Impacts of 
@@ -46,13 +46,12 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	or unauthorized use.
 Depends: R (>= 4.3.0)
 URL: https://doi.org/10.5066/F7S46Q3F
-Imports: lubridate, stats, taxize, ritis, curl, jsonlite, methods,
-        RCurl
+Imports: lubridate, stats, ritis, curl, jsonlite, methods, RCurl
 License: CC0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2024-01-11 23:53:21 UTC; vpatil
+Packaged: 2024-10-10 03:31:02 UTC; vpatil
 Repository: CRAN
-Date/Publication: 2024-01-12 00:10:02 UTC
+Date/Publication: 2024-10-11 10:40:03 UTC

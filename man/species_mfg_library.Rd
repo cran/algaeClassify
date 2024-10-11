@@ -24,15 +24,15 @@ See accompanying manuscript for sources
 \references{
 {Algaebase} \url{https://www.algaebase.org}
 
-{Phycokey} \url{http://www.cfb.unh.edu/phycokey/phycokey.htm}
+{Phycokey} \url{https://www.cfb.unh.edu/phycokey/phycokey.htm}
 
 {Western Diatoms of North America} \url{https://diatoms.org}
 
 {CyanoDB 2} \url{http://www.cyanodb.cz/}
 
-{Nordic Microalgae} \url{http://nordicmicroalgae.org}
+{Nordic Microalgae} \url{https://nordicmicroalgae.org}
 
-{Phytopedia} \url{https://www.eoas.ubc.ca/research/phytoplankton/}
+{Phytopedia} \url{https://phytoplankton.eoas.ubc.ca/}
 
 {Kapustin, D., Sterlyagova, I. and Patova, E., 2019. Morphology of Chrysastrella paradoxa stomatocysts from the Subpolar Urals (Russia) with comments on related morphotypes. Phytotaxa, 402(6), pp.295-300.}
 }
