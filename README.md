@@ -2,7 +2,7 @@
 
 ## Title: Determine Phytoplankton Functional Groups Based on Functional Traits
 
--   release v2.0.3
+-   release v2.0.4
     -   a newer version of this software package may be available.
 
 ## Authors
@@ -18,7 +18,7 @@ Dietmar Straile
 ## Suggested Citation
 
 Patil, V.P., Seltmann, T., Salmaso, N., Anneville, O., Lajeunesse, M.,
-Straile, D., 2023. algaeClassify (ver 2.0.1, October 2023): U.S.
+Straile, D., 2025. algaeClassify (ver 2.0.1, October 2023): U.S.
 Geological Survey software release, <https://doi.org/10.5066/F7S46Q3F>
 
 ## Contact
@@ -30,7 +30,7 @@ Anchorage, Alaska 99508 USA; 907-786-7178
 
 ## Software Requirements
 
--   Requires R (version 4.3.0 or later)
+-   Requires R (version 4.4.2 or later)
     -   available for free download from the Comprehensive R Archive
         Network (CRAN) <https://cran.r-project.org>
 

@@ -10,6 +10,7 @@ gnr_simple(
   name,
   sourceid = NULL,
   best_match = TRUE,
+  fuzzy_uninomial = TRUE,
   canonical = TRUE,
   with_context = TRUE,
   higher = FALSE
@@ -23,10 +24,11 @@ see https://resolver.globalnames.org/sources/}
 
 \item{best_match}{boolean. Should the best match be returned based on score?}
 
-\item{canonical}{If TRUE, names do not include authorship or date}
+\item{fuzzy_uninomial}{boolean. Use fuzzy matching for uninomial names?}
 
-\item{with_context}{If TRUE, Match scores are weighted for taxonomic
-consistency}
+\item{canonical}{boolean. return canonical name?}
+
+\item{with_context}{boolean. Return context (auther of species name?)}
 
 \item{higher}{boolean: Return higher taxonomic classifications?}
 }

@@ -11,3 +11,6 @@
 	- 2024-10-08
 	- Removed taxize dependency. Revised gnr_simple and gnr_df to use the Global Names Resolver API
 	
+- v2.0.4
+	- 2025-05-12
+	- Revised gnr_simple and gnr_df to eliminate errors caused by changes in the Global Names Resolver API

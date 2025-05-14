@@ -34,7 +34,7 @@ traits_to_mfg <- function(flagella = NA,
       class %in% c("Bacillariophyceae",
 					"Coscinodiscophyceae",
 					"Mediophyceae",
-					"Fragilariophyceae")==F) {
+					"Fragilariophyceae")==FALSE) {
     #making sure that diatoms are excluded from this branch
     if (order %in% c("Volvocales",
 					  "Chlamydomonadales")){

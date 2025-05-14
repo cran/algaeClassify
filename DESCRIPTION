@@ -1,10 +1,10 @@
 Package: algaeClassify
-Title: Tools to Query the Algaebase Online Database, Standardize
+Title: Tools to Query the 'Algaebase' Online Database, Standardize
         Phytoplankton Taxonomic Data, and Perform Functional Group
         Classifications
-Version: 2.0.3
-Date: 2024-10-08
-Authors@R: c(person("Vijay","Patil",email="vpatil@usgs.gov",role=c("aut","cre")),
+Version: 2.0.4
+Date: 2025-05-12
+Authors@R: c(person("Vijay","Patil",email=c("vij.patil@gmail.com"),role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),
 		   person("Orlane","Anneville",role="aut"),
@@ -16,7 +16,7 @@ Author: Vijay Patil [aut, cre],
   Orlane Anneville [aut],
   Marc Lajeunesse [aut],
   Dietmar Straile [aut]
-Maintainer: Vijay Patil <vpatil@usgs.gov>
+Maintainer: Vijay Patil <vij.patil@gmail.com>
 Description: Functions that facilitate the use of accepted taxonomic nomenclature, collection of
 	functional trait data, and assignment of functional group classifications to phytoplankton
 	species. Possible classifications include Morpho-functional group (MFG; Salmaso et al. 2015 
@@ -24,16 +24,16 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	adaptive strategies of phytoplankton. In C.D. Sandgren (ed). Growth and reproductive 
 	strategies of freshwater phytoplankton, 388-433. Cambridge University Press, New York). 
 	Versions 2.0.0 and later includes new functions for querying the 
-	algaebase online taxonomic database (www.algaebase.org), however these functions require
-	a valid API key that must be acquired from the algaebase admin. 
-	Note that none of the algaeClassify authors are affiliated with algaebase in any way. Taxonomic 
+	'algaebase' online taxonomic database (www.algaebase.org), however these functions require
+	a valid API key that must be acquired from the 'algaebase' administrators. 
+	Note that none of the 'algaeClassify' authors are affiliated with 'algaebase' in any way. Taxonomic 
 	names can also be checked against a variety of taxonomic databases using 
-	the Global Names Resolver service via its API (<https://resolver.globalnames.org/api>). In addition,
+	the 'Global Names Resolver' service via its API (<https://resolver.globalnames.org/api>). In addition,
 	currently accepted and outdated synonyms, and higher taxonomy, can be extracted for lists of 
-	species from the ITIS database using wrapper functions for the ritis package.
-	The algaeClassify package is a product of the GEISHA (Global Evaluation of the Impacts of 
+	species from the 'ITIS' database using wrapper functions for the ritis package.
+	The 'algaeClassify' package is a product of the GEISHA (Global Evaluation of the Impacts of 
 	Storms on freshwater Habitat and Structure of phytoplankton Assemblages), funded by CESAB 
-    (Centre for Synthesis and Analysis of Biodiversity) and the USGS John Wesley Powell Center for
+    (Centre for Synthesis and Analysis of Biodiversity) and the U.S. Geological Survey John Wesley Powell Center for
 	Synthesis and Analysis, with data and other support provided by members of GLEON 
 	(Global Lake Ecology Observation Network). 
 	DISCLAIMER: This software has been approved for release by the 
@@ -44,14 +44,14 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	any such warranty. Furthermore, the software is released on condition that neither the USGS 
 	nor the U.S. Government shall be held liable for any damages resulting from its authorized 
 	or unauthorized use.
-Depends: R (>= 4.3.0)
+Depends: R (>= 4.4.0)
 URL: https://doi.org/10.5066/F7S46Q3F
 Imports: lubridate, stats, ritis, curl, jsonlite, methods, RCurl
 License: CC0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-10-10 03:31:02 UTC; vpatil
+Packaged: 2025-05-13 01:28:09 UTC; vpatil
 Repository: CRAN
-Date/Publication: 2024-10-11 10:40:03 UTC
+Date/Publication: 2025-05-14 08:50:08 UTC

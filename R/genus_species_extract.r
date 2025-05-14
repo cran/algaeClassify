@@ -24,20 +24,20 @@ genus_species_extract<-function(phyto.df,phyto.name)
   orig.spp.list=spp.list
 
   spp.list=iconv(spp.list, to='UTF-8') #switched from ASCII- will retain umlauts, accents, etc.
-  spp.list=gsub('Cfr. ','',spp.list,ignore.case=T)
-  spp.list=gsub('cf ','',spp.list,ignore.case=T)
-  spp.list=gsub('cf.','',spp.list,ignore.case=T)
+  spp.list=gsub('Cfr. ','',spp.list,ignore.case=TRUE)
+  spp.list=gsub('cf ','',spp.list,ignore.case=TRUE)
+  spp.list=gsub('cf.','',spp.list,ignore.case=TRUE)
 
   ##removing descriptors- may contain useful information, but are not a proper name
-  spp.list=gsub('colony','',spp.list,ignore.case=T)
-    spp.list=gsub('colonies','',spp.list,ignore.case=T)
-	  spp.list=gsub('cells','',spp.list,ignore.case=T)
+  spp.list=gsub('colony','',spp.list,ignore.case=TRUE)
+    spp.list=gsub('colonies','',spp.list,ignore.case=TRUE)
+	  spp.list=gsub('cells','',spp.list,ignore.case=TRUE)
 	    spp.list[spp.list=='cell']=''
 
   ###cleaning up genus-only records
   genus.only.flag=rep(0,length(spp.list)) #flag for species names with spp. or sp. in them
   genus.only.flag[grep(' sp | sp. | spp | spp. | sp.$| spp.$| sp$| sp1| spp$',
-					   spp.list,ignore.case=T)]=1
+					   spp.list,ignore.case=TRUE)]=1
 					   #doesn't account for sp or spp at end of string
 
   ###flagging and cleaning up records with subspecies or vars
@@ -45,10 +45,10 @@ genus_species_extract<-function(phyto.df,phyto.name)
   ###have to account for abbreviations with and without capitalization and upper/lower case
   var.flag=rep(0,length(spp.list)) #vector to indicate if a species name includes a var/subsp/etc.
   var.flag[grep(' var. | subsp. | ssp. | v. | morph. | gr. | mor. | var | subsp | ssp | v | morph |
-				  gr | mor | aff. | aff | f | f. | tab. ',spp.list,ignore.case=T)]=1
+				  gr | mor | aff. | aff | f | f. | tab. ',spp.list,ignore.case=TRUE)]=1
 
   spp.list=gsub(' var. | subsp. | ssp. | v. | morph. | gr. | mor. | var | subsp | ssp | v | morph |
-				  gr | mor | aff. | aff | f | f. | tab. ',' ',spp.list,ignore.case=T)
+				  gr | mor | aff. | aff | f | f. | tab. ',' ',spp.list,ignore.case=TRUE)
 
   ###trimming leftover trailing and leading whitespace
   spp.list=trimws(spp.list,'both')

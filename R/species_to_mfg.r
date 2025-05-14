@@ -36,7 +36,7 @@ species_to_mfg<-function(genus,species="",flag=1,mfgDbase=NA)#set flag to two if
   partial.match=0
 
   genus=gsub('Unknown ','',genus)
-  if(species %in% mfgDbase$species==F){species=''}#replacing spp., sp. etc. with ''
+  if(species %in% mfgDbase$species==FALSE){species=''}#replacing spp., sp. etc. with ''
 
   #hardcoding a match
   if(genus=='Hyloraphidium'){genus='Hyaloraphidium'}

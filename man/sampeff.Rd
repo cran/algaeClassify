@@ -7,7 +7,7 @@
 sampeff(
   b_data,
   column,
-  save.pdf = F,
+  save.pdf = FALSE,
   lakename = "",
   datecolumn = "date_dd_mm_yy",
   dateformat = "\%d-\%m-\%y"
@@ -28,7 +28,7 @@ can be NA for presence absence}
 \item{dateformat}{Character string specifying POSIX data format}
 }
 \value{
-a time-series plot of minimum relative abundance over time. This should change 
+a time-series plot of minimum relative abundance over time. This should change
         systematically with counting effort.
 }
 \description{

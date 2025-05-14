@@ -1,7 +1,5 @@
 # algaeClassify 2.0.4
 
-# algaeClassify 2.0.3
-
 ## Major changes
 
 - Version 2.0.x includes tools for querying the algaebase taxonomic database with a valid API key.
@@ -16,3 +14,4 @@ the ITIS taxonomic database.
 a warning and data.frame containing NAs if the ITIS website is temporarily down.
 -Version 2.0.3 queries the Global Names Resolver via its API, rather than calling
   functions from the taxize package.
+-Version 2.0.4 contains revised functions for querying the Global Names Resolver based on its updated API.

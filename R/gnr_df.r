@@ -10,6 +10,7 @@
 #' @param sourceid integer vector with data source ids.
 #' see https://resolver.globalnames.org/sources/
 #' @param best_match boolean. Should the best match be returned based on score?
+#' @param fuzzy_uninomial boolean. Use fuzzy matching for uninomial names?
 #' @param canonical If TRUE, names do not include authorship or date
 #' @param with_context If TRUE, Match scores are weighted for taxonomic
 #' consistency
@@ -29,35 +30,35 @@
 #' lakegeneva$genus_species <- trimws(paste(lakegeneva$genus,
 #'	lakegeneva$species))
 #'
-#' #checking for matches from all GNRS sources:
+#' #checking for matches from all GNRS sources, first 5 rows:
 #' lakegeneva.namematches <- gnr_df(lakegeneva,"genus_species")
 #' lakegeneva.namematches
 
 
-gnr_df<-function(df,name.column,higher=FALSE,sourceid=NULL,best_match=TRUE,
-                 canonical=TRUE,with_context=TRUE)
+gnr_df<-function(df,name.column,sourceid=NULL,best_match=TRUE,
+                 fuzzy_uninomial=TRUE, canonical=TRUE,with_context=TRUE,higher=FALSE)
 {
   #base API string
-  gnrs.string<-"http://resolver.globalnames.org/name_resolvers.json?names="
+  gnrs.string<-"https://verifier.globalnames.org/api/v1/verifications/"
 
   name<-df[,name.column]
 
   gnrs.name<-gsub(' ','+',name)
   if(length(gnrs.name)>1){
-    gnrs.name<-paste(gnrs.name,collapse='|')
+    gnrs.name<-paste(gnrs.name,collapse='%7C')
   }
-
-  gnrs.string<-paste0(gnrs.string,gnrs.name)
+  gnrs.string<-paste0(gnrs.string,gnrs.name,'?')
   if(best_match){
-    gnrs.string<-paste0(gnrs.string,"&best_match_only=true")
+    gnrs.string<-paste0(gnrs.string,"best_match_only=",best_match,"%26")
   }
   if(!is.null(sourceid)){
-    data_sources<-paste(sourceid,collapse='|')
-    gnrs.string<-paste0(gnrs.string,"&data_source_ids=",data_sources)
+    data_sources<-paste(sourceid,collapse='%7C')
+    gnrs.string<-paste0(gnrs.string,"data_source_ids=",data_sources,"%26")
   }
-  if(!with_context){
-    gnrs.string<-paste0(gnrs.string,"&with_context=false")
+  if(!fuzzy_uninomial){
+    gnrs.string<-paste0(gnrs.string,"fuzzy_uninomial=",fuzzy_uninomial,"%26")
   }
+  gnrs.string<-paste0(gnrs.string,"species_group=true")
   con<-curl::curl(gnrs.string)
 
   results<-jsonlite::prettify(try(readLines(con,warn=FALSE),silent=TRUE))
@@ -69,11 +70,10 @@ gnr_df<-function(df,name.column,higher=FALSE,sourceid=NULL,best_match=TRUE,
 
   close(con)
 
-
   #transform to r list of lists
   result.list<-jsonlite::fromJSON(results)
 
-  results.output.list<-result.list$data$results
+  results.output.list<-result.list$names$bestResult
 
   #results dataframe
   output<-data.frame(input_name=NULL,
@@ -82,8 +82,12 @@ gnr_df<-function(df,name.column,higher=FALSE,sourceid=NULL,best_match=TRUE,
                      match_type=NULL,
                      data_source=NULL,
                      data_import_date=NULL)
-  for(i in 1:length(results.output.list)){
-    if(is.null(result.list$data$results[[i]])){
+  if(higher){
+    output<-cbind(data.frame(Kingdom=NULL,Phylum=NULL,Class=NULL,Order=NULL,Family=NULL),
+               output)
+  }
+  for(i in 1:nrow(results.output.list)){
+    if(is.null(results.output.list[i,])){
       tmp<-data.frame(input_name=name[i],
                          match_name=NA,
                          match_score=NA,
@@ -97,36 +101,37 @@ gnr_df<-function(df,name.column,higher=FALSE,sourceid=NULL,best_match=TRUE,
       }
       output<-rbind(output,tmp)
     }else{
-      res.output<-data.frame(result.list$data$results[[i]])
-
-    match.name<-if(canonical){
-      res.output$canonical_form}else{res.output$name_string}
+      results.output<-result.list$names$bestResult[i,]
+      match.name<-if(canonical){results.output$currentCanonicalFull}else{
+        results.output$currentName}
 
     tmp<-data.frame(input_name=name[i],
                     match_name=match.name,
-                    match_score=res.output$score,
-                    match_type=res.output$match_value,
-                    data_source=res.output$data_source_title,
-                    data_import_date=res.output$imported_at
+                    match_score=results.output$sortScore,
+                    match_type=result.list$names$matchType[i],
+                    data_source=results.output$dataSourceTitleShort,
+                    data_import_date=results.output$entryDate
     )
 
     if(higher){
-      n<-nrow(res.output)
+      n<-nrow(results.output)
       higher.df<-data.frame(Kingdom=rep(NA,n),Phylum=rep(NA,n),Class=rep(NA,n),
                             Order=rep(NA,n),Family=rep(NA,n))
       higher.groups.keep<-tolower(names(higher.df))
-      higher.taxonomy<-res.output$classification_path
+      higher.taxonomy<-results.output$classificationPath
       higher.taxonomy<-sapply(higher.taxonomy,strsplit,split='|',fixed=TRUE)
-      higher.classes<-res.output$classification_path_ranks
+      higher.classes<-results.output$classificationRanks
       higher.classes<-sapply(higher.classes,strsplit,split='|',fixed=TRUE)
       for(i in 1:n){
         higher.df[i,]<-higher.taxonomy[[i]][match(higher.groups.keep,
                                                   tolower(higher.classes[[i]]))]
+        }
+        tmp<-cbind(higher.df,tmp)
       }
-      tmp<-cbind(higher.df,tmp)
-    }
     output<-rbind(output,tmp)
-  }
+
+    }
+
 
   }
 

@@ -28,6 +28,9 @@
 accum = function(b_data, phyto_name='phyto_name',column=NA, n=100, save.pdf=FALSE,lakename='',
                  datename='date_dd_mm_yy',dateformat='%d-%m-%y') {
 
+  oldpar <- graphics::par(no.readonly = TRUE) 
+  on.exit(graphics::par(oldpar))#reset to original par() settings if function exits.
+  
 	b_data[[datename]]=as.character(b_data[[datename]])
 
   b_data$date_dd_mm_yy = as.POSIXct(b_data[[datename]],format=dateformat)
@@ -66,7 +69,7 @@ accum = function(b_data, phyto_name='phyto_name',column=NA, n=100, save.pdf=FALS
 
   sbio$date_dd_mm_yy=as.POSIXct(sbio$date_dd_mm_yy,format='%Y-%m-%d')
 
-  rich = as.data.frame(table(sbio$date_dd_mm_yy),stringsAsFactors = F)
+  rich = as.data.frame(table(sbio$date_dd_mm_yy),stringsAsFactors = FALSE)
   rich$Var1=as.POSIXct(rich$Var1,format='%Y-%m-%d')
 
   rich=rich[match(unique(sbio$date_dd_mm_yy),rich$Var1),]
@@ -98,7 +101,7 @@ accum = function(b_data, phyto_name='phyto_name',column=NA, n=100, save.pdf=FALS
       x1 = subset(sbio, sbio$date_dd_mm_yy == unique(sbio$date_dd_mm_yy)[i])
       #take aggregate data from that date
 
-      ttt =  data.frame(phyto_name = sample(first$phyto_name, as.numeric(table(x1$date_dd_mm_yy)), replace = F), date_dd_mm_yy = unique(sbio$date_dd_mm_yy)[i],stringsAsFactors = F)
+      ttt =  data.frame(phyto_name = sample(first$phyto_name, as.numeric(table(x1$date_dd_mm_yy)), replace = FALSE), date_dd_mm_yy = unique(sbio$date_dd_mm_yy)[i],stringsAsFactors = FALSE)
       #sample randomly from list of all taxa seen, draw number of unique taxa seen that day
 
       tt = rbind(tt, ttt)
@@ -131,7 +134,6 @@ accum = function(b_data, phyto_name='phyto_name',column=NA, n=100, save.pdf=FALS
     grDevices::dev.off()
   }
 
-  graphics::par(mfcol=c(1,1))
-  graphics::par(mar=c(5.1, 4.1 ,4.1, 2.1))
+  graphics::par(oldpar)#reset to original par() settings.
 
 }

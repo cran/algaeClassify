@@ -8,11 +8,12 @@ names}
 gnr_df(
   df,
   name.column,
-  higher = FALSE,
   sourceid = NULL,
   best_match = TRUE,
+  fuzzy_uninomial = TRUE,
   canonical = TRUE,
-  with_context = TRUE
+  with_context = TRUE,
+  higher = FALSE
 )
 }
 \arguments{
@@ -21,17 +22,19 @@ gnr_df(
 \item{name.column}{integer or character string with column name containing
 species names}
 
-\item{higher}{boolean: Return higher taxonomic classifications?}
-
 \item{sourceid}{integer vector with data source ids.
 see https://resolver.globalnames.org/sources/}
 
 \item{best_match}{boolean. Should the best match be returned based on score?}
 
+\item{fuzzy_uninomial}{boolean. Use fuzzy matching for uninomial names?}
+
 \item{canonical}{If TRUE, names do not include authorship or date}
 
 \item{with_context}{If TRUE, Match scores are weighted for taxonomic
 consistency}
+
+\item{higher}{boolean: Return higher taxonomic classifications?}
 }
 \value{
 new data.frame original names (input_name), 1/0 flag for an exact
@@ -50,7 +53,7 @@ lakegeneva<- genus_species_extract(lakegeneva,'phyto_name')
 lakegeneva$genus_species <- trimws(paste(lakegeneva$genus,
 lakegeneva$species))
 
-#checking for matches from all GNRS sources:
+#checking for matches from all GNRS sources, first 5 rows:
 lakegeneva.namematches <- gnr_df(lakegeneva,"genus_species")
 lakegeneva.namematches
 }
