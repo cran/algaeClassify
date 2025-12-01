@@ -2,7 +2,7 @@
 
 ## Title: Determine Phytoplankton Functional Groups Based on Functional Traits
 
--   release v2.0.4
+-   release v2.0.5
     -   a newer version of this software package may be available.
 
 ## Authors
@@ -35,12 +35,10 @@ Anchorage, Alaska 99508 USA; 907-786-7178
         Network (CRAN) <https://cran.r-project.org>
 
 ## Distribution
-
--   Comprehensive R Archive Network (CRAN) 
-    <https://cran.r-project.org/package=algaeClassify>
-
 -   The U.S. Geological Survey through this repository
     <https://doi.org/10.5066/F7S46Q3F>
+-   Comprehensive R Archive Network (CRAN) 
+    <https://cran.r-project.org/package=algaeClassify>
 
 ## Package Overview
 
@@ -282,8 +280,8 @@ finds the correct genus name as a partial match when exact.matches.only = FALSE.
 
 Version 2.0.0 includes functions for
 searching the ITIS database and for using the Global Names Resolver
-(GNR). These functions are based on the **ritis** and **taxize**
-packages, respectively.
+(GNR). ITIS search functions are based on the **ritis** package, while
+GNR search uses the API described at <https://verifier.globalnames.org/>.
 
 ```
 #ITIS

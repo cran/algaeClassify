@@ -2,8 +2,8 @@ Package: algaeClassify
 Title: Tools to Query the 'Algaebase' Online Database, Standardize
         Phytoplankton Taxonomic Data, and Perform Functional Group
         Classifications
-Version: 2.0.4
-Date: 2025-05-12
+Version: 2.0.5
+Date: 2025-12-1
 Authors@R: c(person("Vijay","Patil",email=c("vij.patil@gmail.com"),role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),
@@ -50,8 +50,8 @@ Imports: lubridate, stats, ritis, curl, jsonlite, methods, RCurl
 License: CC0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 NeedsCompilation: no
-Packaged: 2025-05-13 01:28:09 UTC; vpatil
+Packaged: 2025-12-01 21:00:59 UTC; vpatil
 Repository: CRAN
-Date/Publication: 2025-05-14 08:50:08 UTC
+Date/Publication: 2025-12-01 23:30:07 UTC

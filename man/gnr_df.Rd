@@ -3,16 +3,15 @@
 \name{gnr_df}
 \alias{gnr_df}
 \title{Wrapper function to apply gnr_simple across a data.frame or list of species
-names}
+names. Modified on 11/18/2025 by Vijay Patil (vpatil@usgs.gov) for
+algaeClassify v2.0.5 (pending approval on CRAN).}
 \usage{
 gnr_df(
   df,
   name.column,
   sourceid = NULL,
-  best_match = TRUE,
   fuzzy_uninomial = TRUE,
-  canonical = TRUE,
-  with_context = TRUE,
+  name_type = "canonical_full",
   higher = FALSE
 )
 }
@@ -25,24 +24,21 @@ species names}
 \item{sourceid}{integer vector with data source ids.
 see https://resolver.globalnames.org/sources/}
 
-\item{best_match}{boolean. Should the best match be returned based on score?}
-
 \item{fuzzy_uninomial}{boolean. Use fuzzy matching for uninomial names?}
 
-\item{canonical}{If TRUE, names do not include authorship or date}
-
-\item{with_context}{If TRUE, Match scores are weighted for taxonomic
-consistency}
+\item{name_type}{Specify format of matched names. Options are
+'canonical_simple' (canonical binomial name), 'canonical_full' (with subspecies
+or subgenera), or 'with_context' (with author and year appended).}
 
 \item{higher}{boolean: Return higher taxonomic classifications?}
 }
 \value{
-new data.frame original names (input_name), 1/0 flag for an exact
-match,the best match (match_name, and other output from gnr_simple().
-			Will contain a row of NAs if no matches were found for a name.
+new data.frame original names (input_name), information about match
+type,the best match (match_name), taxonomic status, and other output from
+gnr_simple(). Will contain a row of NAs if no matches were found for a name.
 }
 \description{
-Provides convienent output with a row per name. To streamline merging with
+Provides convienent output with a row per name, to streamline merging with
 original data.
 }
 \examples{

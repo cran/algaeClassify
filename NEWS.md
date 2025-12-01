@@ -1,4 +1,4 @@
-# algaeClassify 2.0.4
+# algaeClassify 2.0.5
 
 ## Major changes
 
@@ -15,3 +15,4 @@ a warning and data.frame containing NAs if the ITIS website is temporarily down.
 -Version 2.0.3 queries the Global Names Resolver via its API, rather than calling
   functions from the taxize package.
 -Version 2.0.4 contains revised functions for querying the Global Names Resolver based on its updated API.
+-Version 2.0.5 contains bug fixes for the gnr_simple() and gnr_df() search functions.

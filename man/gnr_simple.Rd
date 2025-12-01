@@ -4,15 +4,16 @@
 \alias{gnr_simple}
 \title{checks species names against a variety of online databases
 supports fuzzy partial matching, using the Global Names Resolver
-(https://resolver.globalnames.org/)}
+(https://resolver.globalnames.org/). Modified on 11/18/2025 by
+Vijay Patil (vpatil@usgs.gov) for
+algaeClassify v2.0.5 (pending approval on CRAN).}
 \usage{
 gnr_simple(
   name,
   sourceid = NULL,
   best_match = TRUE,
   fuzzy_uninomial = TRUE,
-  canonical = TRUE,
-  with_context = TRUE,
+  name_type = "canonical_full",
   higher = FALSE
 )
 }
@@ -26,9 +27,9 @@ see https://resolver.globalnames.org/sources/}
 
 \item{fuzzy_uninomial}{boolean. Use fuzzy matching for uninomial names?}
 
-\item{canonical}{boolean. return canonical name?}
-
-\item{with_context}{boolean. Return context (auther of species name?)}
+\item{name_type}{Specify format of matched names. Options are
+'canonical_simple' (canonical binomial name), 'canonical_full' (with subspecies
+or subgenera), or 'with_context' (with author and year appended).}
 
 \item{higher}{boolean: Return higher taxonomic classifications?}
 }
@@ -38,14 +39,17 @@ and scores from Global Names Resolver (https://resolver.globalnames.org/).
 Will contain a row of NAs if no matches found
 }
 \description{
-Provides convienent output with a single result, using a variety
-of criteria for the best match
+checks species names against a variety of online databases
+supports fuzzy partial matching, using the Global Names Resolver
+(https://resolver.globalnames.org/). Modified on 11/18/2025 by
+Vijay Patil (vpatil@usgs.gov) for
+algaeClassify v2.0.5 (pending approval on CRAN).
 }
 \examples{
 #Visit https://resolver.globalnames.org/data_sources to see all possible
 #data sources for name checking.
 name<-"Aphanazomenon flos-aquae"
-#sourceid=3 for ITIS database,195 for Algaebase
-gnr_simple(name,sourceid=3) #search for ITIS matches
-gnr_simple(name,sourceid=NULL) #search for matches from any source
+#sourceid=3 for ITIS database
+gnr_simple(name,sourceid=3) #search for best match from ITIS
+gnr_simple(name,sourceid=NULL,best_match=FALSE) #search for all matches from any source
 }

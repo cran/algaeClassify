@@ -1,7 +1,7 @@
 6af8ef4d0b9288a566c7560b06ed7c9d *CHANGELOG
-ed4b1a0f3338df9997234baa949846e3 *DESCRIPTION
-9c90585b373ed326cc7fa8299220a15b *NAMESPACE
-ed48dd98fb12d0e7713b7a175fb21785 *NEWS.md
+8f3e199f869b2a2e6201320e16da8de5 *DESCRIPTION
+8565f4c522d9cedeaeaae4c966a82f79 *NAMESPACE
+6ef7c3011c77a26d4e8b489eab316616 *NEWS.md
 c8dfdcc65d3e878aa7c90a3fb4f2b2a5 *R/accum.R
 7962412f627609ca7c583048865b4993 *R/algaebase_genus_search.r
 49b00050757339fec11c1aa7de3e77c1 *R/algaebase_output_parse.r
@@ -14,8 +14,8 @@ d020743d232a1f2b5972f39b8321e4ce *R/date_mat.R
 c6cfe46241378788341b5f336c505f32 *R/genus_species_extract.r
 010edd98e406c5ca0605cf4dfd24df69 *R/get_apikey_from_Renviron.r
 ca097c65154ad9a73ea3500cac7731de *R/get_apikey_from_file.r
-f05f317483d3dbf5da59c6d4354f18b1 *R/gnr_df.r
-15de18d0e96d9b86cfcba7d22c4edf75 *R/gnr_simple.r
+c8adb0671df7d9682b750ac9c670e104 *R/gnr_df.r
+92b5b225d363c8fe473acacf4bab1fcb *R/gnr_simple.r
 ca05f56f51b2da75a741be35e09a504b *R/itis_search_df.r
 4640989779a9a2fc64faea03ba54e25e *R/lakegeneva.R
 bdaa200899f7e27474ee2480d65a2f2f *R/mfgTraits.r
@@ -34,7 +34,7 @@ ecf9ac858ab3b8120f056be14ab36f17 *R/traits_to_csr.r
 4d95bad5760159e84d8fdfe966332f92 *R/traits_to_csr_df.r
 9f12b701c411c2ef0330b9e4cd85bb7e *R/traits_to_mfg.R
 36adb8189feae5433694e4b5c1b14abf *R/traits_to_mfg_df.r
-1fcdcdf8c1fed632ba9dcb6ba1ae35f3 *README.md
+13bcd37315b61d8fa819cc39bcf968df *README.md
 d4d6da60286baf7c46223f46787c03e6 *data/csrTraits.rda
 9968285d4825a0215e0270336b47198b *data/lakegeneva.rda
 2ed67cf1b8e301a5564b8c32e6ed3bf8 *data/mfgTraits.rda
@@ -53,8 +53,8 @@ aa19d6debf8f9f89055bcb8cf55842b1 *man/csrTraits.Rd
 3223299d28bc6b593817bce50665cb6b *man/genus_species_extract.Rd
 5fd33bc6256579d23c661795d56cdd01 *man/get_apikey.Rd
 75d3234ce8a7c297c669e5f7f9f1b7c5 *man/get_apikey_fromfile.Rd
-7612ffdeb881dbceb98214f822f24edf *man/gnr_df.Rd
-30bf76fac5a97417486ac4a82e573f74 *man/gnr_simple.Rd
+4e98166f32956408b3716c78808f048b *man/gnr_df.Rd
+ac0c704fcf984f0ad258c2d49567b67b *man/gnr_simple.Rd
 ee2aa05b0b020dddcc577a752bd077bb *man/itis_search_df.Rd
 053bb533bcad46c33be4d50a40179503 *man/lakegeneva.Rd
 a121de6e159f580e1cc0af0b936575a0 *man/mean_naomit.Rd
