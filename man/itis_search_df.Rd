@@ -29,16 +29,13 @@ Wrapper function for applying genus_search_itis and species_search_itis
 to a whole data.frame containing scientific names
 }
 \examples{
+\donttest{
 data(lakegeneva)
-#example dataset
-
 new.lakegeneva <- genus_species_extract(lakegeneva[1,],'phyto_name')
 new.lakegeneva$genus_species <- trimws(paste(new.lakegeneva$genus,
 new.lakegeneva$species))
-#checking for genus-only name matches in ITIS, and extracting higher taxonomy
-#flagging names with imperfect or no matches
-
 lakegeneva.genus.itischeck <-
          itis_search_df(new.lakegeneva,"genus_species")
-         lakegeneva.genus.itischeck
+lakegeneva.genus.itischeck
+}
 }

@@ -2,8 +2,8 @@ Package: algaeClassify
 Title: Tools to Query the 'Algaebase' Online Database, Standardize
         Phytoplankton Taxonomic Data, and Perform Functional Group
         Classifications
-Version: 2.0.5
-Date: 2025-12-1
+Version: 2.0.6
+Date: 2026-05-10
 Authors@R: c(person("Vijay","Patil",email=c("vij.patil@gmail.com"),role=c("aut","cre")),
 		   person("Torsten","Seltmann",role="aut"),
 		   person("Nico","Salmaso",role="aut"),
@@ -29,8 +29,8 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	Note that none of the 'algaeClassify' authors are affiliated with 'algaebase' in any way. Taxonomic 
 	names can also be checked against a variety of taxonomic databases using 
 	the 'Global Names Resolver' service via its API (<https://resolver.globalnames.org/api>). In addition,
-	currently accepted and outdated synonyms, and higher taxonomy, can be extracted for lists of 
-	species from the 'ITIS' database using wrapper functions for the ritis package.
+	currently accepted and outdated synonyms, and higher taxonomy, can be extracted for lists of
+	species from the 'ITIS' database via its JSON web service API.
 	The 'algaeClassify' package is a product of the GEISHA (Global Evaluation of the Impacts of 
 	Storms on freshwater Habitat and Structure of phytoplankton Assemblages), funded by CESAB 
     (Centre for Synthesis and Analysis of Biodiversity) and the U.S. Geological Survey John Wesley Powell Center for
@@ -46,12 +46,12 @@ Description: Functions that facilitate the use of accepted taxonomic nomenclatur
 	or unauthorized use.
 Depends: R (>= 4.4.0)
 URL: https://doi.org/10.5066/F7S46Q3F
-Imports: lubridate, stats, ritis, curl, jsonlite, methods, RCurl
+Imports: lubridate, stats, curl, jsonlite, methods
 License: CC0
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.3
+Config/roxygen2/version: 8.0.0
 NeedsCompilation: no
-Packaged: 2025-12-01 21:00:59 UTC; vpatil
+Packaged: 2026-05-11 00:22:47 UTC; vpatil
 Repository: CRAN
-Date/Publication: 2025-12-01 23:30:07 UTC
+Date/Publication: 2026-05-11 05:10:07 UTC

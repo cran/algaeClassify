@@ -20,6 +20,8 @@ Wrapper function for several functions in ritis::
 Searches ITIS database for matches to a genus name
 }
 \examples{
+\donttest{
 genus='Anabaena'
 genus_search_itis(genus,higher=FALSE)
+}
 }

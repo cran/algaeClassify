@@ -15,19 +15,15 @@
 #' higher=TRUE)
 #'
 #' @examples
-#
+#' \donttest{
 #' data(lakegeneva)
-#' #example dataset
-#'
 #' new.lakegeneva <- genus_species_extract(lakegeneva[1,],'phyto_name')
 #' new.lakegeneva$genus_species <- trimws(paste(new.lakegeneva$genus,
 #' new.lakegeneva$species))
-#' #checking for genus-only name matches in ITIS, and extracting higher taxonomy
-#' #flagging names with imperfect or no matches
-#'
 #' lakegeneva.genus.itischeck <-
 #'          itis_search_df(new.lakegeneva,"genus_species")
-#'          lakegeneva.genus.itischeck
+#' lakegeneva.genus.itischeck
+#' }
 
 itis_search_df<-function(df,namecol=NA,higher=FALSE,genus.only=FALSE)
 {
@@ -40,22 +36,6 @@ itis_search_df<-function(df,namecol=NA,higher=FALSE,genus.only=FALSE)
 		)
 		}
 
-	#first, make sure itis is up.
-	itis.check<-RCurl::url.exists("www.itis.gov")
-	if(!itis.check){
-	  #if site is down, return warning
-	  message("Warning: Could not connect to ITIS website (www.itis.gov). The site may be
-            temporarily down. Please try again later.")
-	  #and populate return data.frame with NA.
-	  tmp<-data.frame(matched.name=NA,match=0,orig.name.accepted=0,
-	                  orig.name=df[[namecol]],genus.only=ifelse(genus.only,1,0),synonyms="")
-	  if(higher){
-	    tmp<-cbind(tmp,data.frame(Kingdom=NA, Subkingdom=NA, Infrakingdom=NA, Phylum=NA, Class=NA,Subclass=NA,Order=NA,
-	                              Family=NA)
-	    )
-	  }
-	  return(tmp)
-	}
 	#wrapper for genspp_itis_search and genus_itis_search on whole data.frame
 
 	nrows<-nrow(df)

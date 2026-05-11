@@ -2,7 +2,7 @@
 
 ## Title: Determine Phytoplankton Functional Groups Based on Functional Traits
 
--   release v2.0.5
+-   release v2.0.6
     -   a newer version of this software package may be available.
 
 ## Authors

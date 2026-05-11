@@ -27,6 +27,8 @@ Searches ITIS database for matches to a binomial scientific name
 outputs matches, current accepted names, synonyms, and higher taxonomy
 }
 \examples{
+\donttest{
 species="Aphanizomenon flosaquae"
 species_search_itis(species,higher=FALSE)
+}
 }
